@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudSastra - Salesforce & Cloud Engineering</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            flex-shrink: 0;
+        }
+
+        .header-text h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .header-text p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        nav {
+            margin-left: auto;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 14px;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #1a1a2e;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            color: #16213e;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .service-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #0066cc;
+        }
+
+        .service-card h3 {
+            margin-top: 0;
+            color: #0066cc;
+        }
+
+        .service-card p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .team {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .team-member {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .team-member h4 {
+            font-size: 18px;
+            color: #0066cc;
+            margin-bottom: 8px;
+        }
+
+        .team-member p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .certifications {
+            font-size: 13px;
+            color: #666;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            border-radius: 8px;
+            margin: 60px 0;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #0066cc;
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 15px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        footer {
+            background: #1a1a2e;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        footer p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .links {
+            margin-top: 15px;
+        }
+
+        .links a {
+            color: #0066cc;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 14px;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            margin-left: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                margin-left: 0;
+                margin-top: 15px;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                margin: 5px 15px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%230066cc;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23004499;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='200' height='200' fill='url(%23grad)' rx='20'/%3E%3Ctext x='100' y='110' font-size='80' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial'>C</text%3E%3C/svg%3E" alt="CloudSastra Logo" class="logo">
+            <div class="header-text">
+                <h1>CloudSastra</h1>
+                <p>Salesforce | Cloud Engineering | Data</p>
+            </div>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#team">Team</a>
+                <a href="https://www.linkedin.com/company/cloudsastra-pty-ltd/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/ch3t/cloudsastra" target="_blank">Repository</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container">
+            <h2>Welcome to CloudSastra</h2>
+            <p>CloudSastra specializes in delivering tailored solutions for Salesforce implementations, cloud data engineering, and digital transformation. Based in Sydney, Australia, we partner with organizations to architect, build, and scale modern solutions across Salesforce, Google Cloud Platform, Microsoft Azure, and Databricks ecosystems.</p>
+            <p style="margin-top: 15px;">Our team brings an average of 10 years of expertise in software engineering, cloud architecture, data engineering, and analytics. We focus on practical delivery, not just strategy.</p>
+        </section>
+
+        <section class="container" id="services">
+            <h2>Our Services</h2>
+            <div class="services">
+                <div class="service-card">
+                    <h3>Salesforce Development</h3>
+                    <p>Custom development, architecture, and implementation. Org optimization, health checks, and OmniStudio solutions.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Data Engineering</h3>
+                    <p>Cloud data pipelines and migrations on GCP, Azure, and Databricks. ETL/ELT processes, data warehousing, and infrastructure design.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Cloud Architecture</h3>
+                    <p>Solution design and implementation on GCP and Azure. Scalable, secure, and cost-optimized cloud solutions.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Application Development</h3>
+                    <p>Python and Java development with cloud-native design. Integration and microservices architecture.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Data Analytics</h3>
+                    <p>Analytics engineering, BI solutions, and insights. Domain-specific expertise including insurance and financial models.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Technical Staffing</h3>
+                    <p>Specialist talent augmentation. Contract and permanent roles in Salesforce, cloud, and data engineering.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" id="team">
+            <h2>Our Team</h2>
+            <div class="team">
+                <div class="team-member">
+                    <h4>Chet Chan — Senior Software Engineer</h4>
+                    <p><strong>15 years of experience</strong> in software design, data modelling, data engineering, and cloud solution architecture.</p>
+                    <p><strong>Expertise:</strong> GCP, cloud architecture, data engineering, system design.</p>
+                    <div class="certifications">
+                        <strong>Certifications:</strong> GCP Professional Machine Learning Engineer, Databricks Certified Professional Data Engineer
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <h4>Hari Kundarapu — Senior Salesforce Developer</h4>
+                    <p><strong>Salesforce Specialist</strong> with extensive experience in enterprise CRM implementations and outsourcing/offshoring delivery.</p>
+                    <p><strong>Expertise:</strong> Salesforce Development, OmniStudio, Salesforce Administration, CRM platforms (Siebel, Dynamics).</p>
+                    <div class="certifications">
+                        <strong>Certifications:</strong> Salesforce Certified Application Architect, OmniStudio Developer
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <h4>Asha Shree — Senior Data Analyst</h4>
+                    <p><strong>Domain expertise</strong> in insurance data, pricing models, and analytics.</p>
+                    <p><strong>Expertise:</strong> Python, SQL, data analysis, insurance domain knowledge, pricing analytics.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Transform Your Digital Landscape?</h2>
+                <p>Let's discuss how CloudSastra can help you accelerate your Salesforce roadmap, modernize your cloud stack, or find specialized technical talent.</p>
+                <a href="https://www.linkedin.com/company/cloudsastra-pty-ltd/" class="cta-button">Connect With Us</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p><strong>CloudSastra Pty Ltd</strong> — Sydney, Australia</p>
+            <p style="margin-top: 10px; font-size: 12px;">Specializing in Salesforce, Cloud Data Engineering, and Digital Transformation</p>
+            <div class="links">
+                <a href="https://www.linkedin.com/company/cloudsastra-pty-ltd/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/ch3t/cloudsastra" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
